@@ -1,11 +1,14 @@
 class Heading extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  
   render(){
-    //C помощью деструктуризации достаем дополнительные элементы
-    const {children} = this.props;
+    const {src, alt} = this.props;
     return React.createElement(
       "div",
       { className: "imageWrapper" },
-      children
+      React.createElement('img', {clasName: "img", src: src, alt: alt})
     );
   };
 }
